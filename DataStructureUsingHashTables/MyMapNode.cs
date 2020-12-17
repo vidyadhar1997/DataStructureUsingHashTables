@@ -109,6 +109,31 @@ namespace DataStructureUsingHashTables
             KeyValue<k, v> item = new KeyValue<k, v>() { Key = key, Value = value, };
             linkedList.AddFirst(item);
         }
+
+        /// <summary>
+        /// Removes the specified key.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        public void Remove(k key)
+        {
+            int poistion = GetArrayPosition(key);
+            LinkedList<KeyValue<k, v>> linkedList = GetLinkedList(poistion);
+            bool itemFound = false;
+            KeyValue<k, v> foundItem = default(KeyValue<k, v>);
+            foreach(KeyValue<k,v>item in linkedList)
+            {
+                if (item.Key.Equals(key))
+                {
+                    itemFound = true;
+                    foundItem = item;
+                }
+            }
+            if (itemFound)
+            {
+                Console.WriteLine(key + " removed ");
+                linkedList.Remove(foundItem);
+            }
+        }
     }
 }
 

@@ -20,6 +20,7 @@ namespace DataStructureUsingHashTables
             }
             int frequency= myMapNode.Get("be");
             Console.WriteLine("Frequency of word in sentence = " + frequency);
+
             sentence = "Paranoids are not paranoid because they are paranoid but because" +
             " they keep putting themselves deliberately into paranoid avoidable situations";
             words = sentence.ToLower().Split(" ");
@@ -34,6 +35,11 @@ namespace DataStructureUsingHashTables
             }
             frequency = myMapNode.Get("paranoid");
             Console.WriteLine("Frequency of word in paragraph = " + frequency);
+
+            myMapNode.Remove("avoidable");
+
+
+
         }
     }
 }
