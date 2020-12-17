@@ -19,7 +19,21 @@ namespace DataStructureUsingHashTables
                     myMapNode.Add(word, value);
             }
             int frequency= myMapNode.Get("be");
-            Console.WriteLine("Frequency = " + frequency);
+            Console.WriteLine("Frequency of word in sentence = " + frequency);
+            sentence = "Paranoids are not paranoid because they are paranoid but because" +
+            " they keep putting themselves deliberately into paranoid avoidable situations";
+            words = sentence.ToLower().Split(" ");
+            foreach (string word in words)
+            {
+                int value = myMapNode.Get(word);
+                if (value == 0)
+                    value = 1;
+                else
+                    value = value + 1;
+                myMapNode.Add(word, value);
+            }
+            frequency = myMapNode.Get("paranoid");
+            Console.WriteLine("Frequency of word in paragraph = " + frequency);
         }
     }
 }
