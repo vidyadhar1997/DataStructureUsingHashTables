@@ -78,26 +78,6 @@ namespace DataStructureUsingHashTables
         }
 
         /// <summary>
-        /// Gets the frequency of words.
-        /// </summary>
-        /// <param name="key">The key.</param>
-        /// <returns>split</returns>
-        public int getFrequencyOfWords(k key)
-        {
-            int poistion=GetArrayPosition(key);
-            LinkedList<KeyValue<k, v>> linkedList=GetLinkedList(poistion);
-            foreach(KeyValue<k, v>items in linkedList)
-            {
-                if (items.Key.Equals(key))
-                {
-                    string s=items.Value.ToString();
-                    return s.Split(" ").Length;
-                }
-            }
-            return 0;
-        }
-
-        /// <summary>
         /// Adds the specified key with value.
         /// </summary>
         /// <param name="key">The key.</param>
